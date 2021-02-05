@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "kliit-health-app"
+  },
+  "targets": {
+    "kliit-health-app": {
+      "hosting": {
+        "kliit-admin": [
+          "kliit-admin"
+        ],
+        "kliit-admin-test": [
+          "kliit-admin-test"
+        ]
+      }
+    }
+  }
+}

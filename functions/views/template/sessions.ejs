@@ -1,0 +1,70 @@
+<%layout('../layout.ejs')%>
+<div id="page-wrapper" style="min-height: 360px;">
+	<div class="container-fluid">
+		<div class="row bg-title">
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+				<h4 class="page-title">Users List</h4>
+			</div>
+			<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+				<ol class="breadcrumb">
+					<li><a href="/index">Dashboard</a></li>
+					<li class="active">Session List</li>
+				</ol>
+			</div>
+		</div>
+		<!-- /row -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="white-box">
+					<!-- <p class="text-muted"><a href="userForm">Add new</a></p> -->
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Provider</th>
+									<th>User</th>
+									<th>Question</th>
+									<th>Created</th>
+									<th>Resolved</th>
+								</tr>
+							</thead>
+							<tbody>
+							<% for(var i=0; i<rows.length; i++) { %>
+								<tr>
+									<td><a href="/userRead?usrno=<%= rows[i].expertInfo.uid %>">Dr. <%= rows[i].expertInfo.profileInfo.lastName %></a></td>
+									<td><a href="/userRead?usrno=<%= rows[i].userInfo.uid %>"><%= rows[i].userInfo.profileInfo.firstName %> <%= rows[i].userInfo.profileInfo.lastName %></a></td>
+									<td><a href="/session?ssnid=<%= rows[i].questionId %>"><%= (rows[i].question.length <= 50 ? rows[i].question : rows[i].question.slice(0, 50) + "...") %></a></td>
+									<td><%= new Date(rows[i].createdAt * 1000).toDateString() %></td>
+									<td><%= rows[i].isResolved %></td>
+								</tr>
+							<% } %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container-fluid -->
+
+</div>
+
+<!-- jQuery -->
+<script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+<!--slimscroll JavaScript -->
+<script src="/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="/js/waves.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/js/custom.min.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
+		<title>Klitt Admin Template - The Ultimate Multipurpose admin template</title>
+		<!-- Bootstrap Core CSS -->
+		<link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Menu CSS -->
+		<link href="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+		<!-- animation CSS -->
+		<link href="/css/animate.css" rel="stylesheet">
+		<!-- Custom CSS -->
+		<link href="/css/style.css" rel="stylesheet">
+		<!-- color CSS -->
+		<link href="/css/colors/default.css" id="theme" rel="stylesheet">
+	</head>
+	<body class="fix-header">
+			<!-- The core Firebase JS SDK is always required and must be listed first -->
+			<script src="/__/firebase/7.3.0/firebase-app.js"></script>
+			<!-- TODO: Add SDKs for Firebase products that you want to use
+			https://firebase.google.com/docs/web/setup#available-libraries -->
+			<script src="/__/firebase/7.3.0/firebase-analytics.js"></script>
+
+			<!-- Initialize Firebase -->
+			<script src="/__/firebase/init.js"></script>
+			<div class="preloader" style="display: none;">
+				<svg class="circular" viewBox="25 25 50 50">
+					<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+				</svg>
+			</div>
+			<div id="wrapper">
+				<nav class="navbar navbar-default navbar-static-top m-b-0">
+					<div class="navbar-header">
+						<div class="top-left-part">
+							<a class="logo" href="">
+								<!-- Logo text image you can use text also --><span class="hidden-xs">
+									<!--This is light logo text--><img style="height: 60px; padding-top: 10px;" src="/plugins/images/admin-text-dark.png" alt="FireBase Admin"
+										class="light-logo">
+								</span> </a>
+						</div>
+						<ul class="nav navbar-top-links navbar-right pull-right">
+		
+							<li>
+								<a class="profile-pic" href="userLogout"> <img src="/plugins/images/users/varun.jpg" alt="user-img"
+										width="36" class="img-circle"><b class="hidden-xs">Logout</b></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="navbar-default sidebar" role="navigation">
+					<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+						<div class="sidebar-nav slimscrollsidebar" style="overflow: hidden; width: auto; height: 100%;">
+							<div class="sidebar-head">
+								<h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span
+										class="hide-menu">Navigation</span></h3>
+							</div>
+							<ul class="nav in" id="side-menu">
+								<li style="padding: 70px 0 0;">
+									<a href="index" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+											aria-hidden="true"></i>Dashboard</a>
+								</li>
+								<li>
+									<a href="userList" class="waves-effect"><i class="fa fa-user fa-fw"
+											aria-hidden="true"></i>Experts</a>
+								</li>
+								<li>
+									<a href="patients" class="waves-effect"><i class="fa fa-user fa-fw"
+											aria-hidden="true"></i>Users</a>
+								</li>
+								<li>
+									<a href="sessions" class="waves-effect"><i class="fa fa-user fa-fw"
+											aria-hidden="true"></i>Sessions</a>
+								</li>
+							</ul>
+		
+						</div>
+						<div class="slimScrollBar"
+							style="background: rgba(0, 0, 0, 0.3); width: 6px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 421px;">
+						</div>
+						<div class="slimScrollRail"
+							style="width: 6px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
+						</div>
+					</div>
+				</div>
+<%- body -%>
+				<!-- /#page-wrapper -->
+			</div>
+			<!-- /#wrapper -->
+			<!-- jQuery -->
+			
+		
+		
+		
+		</body>
+</html>

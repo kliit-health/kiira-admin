@@ -1,0 +1,573 @@
+<%layout('../layout.ejs')%>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+<!--slimscroll JavaScript -->
+<script src="/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="/js/waves.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/js/custom.min.js"></script>
+
+
+<script type="text/javascript" src="/jquery.timepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="/jquery.timepicker.css" />
+<script type="text/javascript" src="/bootstrap-datepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="/bootstrap-datepicker.css" />
+<script type="text/javascript" src="/site.js"></script>
+<link rel="stylesheet" type="text/css" href="/site.css" />
+
+
+<script>
+
+		$(function() {
+		   $(".datepicker").timepicker();
+		 });
+
+
+		 $( function() {
+$( "#dob" ).datepicker();
+} );
+							</script>
+				<div id="page-wrapper" style="min-height: 360px;">
+					<div class="container-fluid">
+						<div class="row bg-title">
+							<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+								<h4 class="page-title">Add User</h4>
+							</div>
+							<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+		
+								<ol class="breadcrumb">
+									<li><a href="#">Dashboard</a></li>
+									<li class="active">Add User</li>
+								</ol>
+							</div>
+							<!-- /.col-lg-12 -->
+						</div>
+						<!-- /row -->
+						<div class="col-md-8 col-xs-12">
+							<div class="white-box">
+								<form name="form1" action="userSave" method="post" onclick="populateSelect();" class="form-horizontal form-material">
+									<div class="form-group">
+										<label class="col-md-12">First Name</label>
+										<div class="col-md-12">
+											<input type="text" id='firstName' name="firstName" required value="" class="form-control form-control-line"> </div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-12">Last Name</label>
+										<div class="col-md-12">
+											<input type="text" name="lastName" value="" required class="form-control form-control-line"> </div>
+									</div>
+									<div class="form-group">
+										<label for="email" class="col-md-12">Email</label>
+										<div class="col-md-12">
+											<input type="email" required class="form-control form-control-line"
+												name="email" value="" id="usremail"> </div>
+									</div>
+									<div class="form-group">
+										<label for="dob" class="col-md-12">date of birth</label>
+										<div class="col-md-12">
+											<input type="text" required class="form-control form-control-line"
+												name="dob" value="" id="dob"> </div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-12">Password</label>
+										<div class="col-md-12">
+											<input type="password" name="password" required value="" class="form-control form-control-line"> </div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-12">City</label>
+										<div class="col-md-12">
+											<input type="text" name="city" required  value="" class="form-control form-control-line"> </div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-12">State</label>
+										<div class="col-md-12">
+
+
+												<select id="state" name="state" onchange="show(this)" class="form-control form-control-line" >
+														<option value="">-- Select --</option>
+													</select>
+
+											</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-12">Number of stars (Scale 1 - 10 to make half stars)</label>
+										<div class="col-sm-12">
+											<select name="rating" value="" required class="form-control form-control-line">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+												<option>6</option>
+												<option>7</option>
+												<option>8</option>
+												<option>9</option>
+												<option>10</option>
+											</select>
+										</div>
+									</div>
+
+
+									<div class="form-group">
+										<label class="col-md-12">Gender</label>
+										<div class="col-md-12">
+												<select name="gender" value="" required class="form-control form-control-line">
+														<option>Male</option>
+														<option>Female</option>
+													</select>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-md-12">Biography</label>
+										<div class="col-md-12">
+											<textarea rows="5" name="bio" value="" required class="form-control form-control-line"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-12">Clinic name</label>
+										<div class="col-md-12">
+											<input type="text" name="name" value="" required class="form-control form-control-line"> </div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-12">Clinic address</label>
+										<div class="col-md-12">
+											<input type="text" name="address" value="" required class="form-control form-control-line"> </div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-md-12">ZipCode</label>
+										<div class="col-md-12">
+											<input type="text" name="zipcode" value="" required class="form-control form-control-line"> </div>
+									</div>
+
+									<div class="form-group">
+										<label class="col-md-12">Phone No</label>
+										<div class="col-md-12">
+											<input type="text" name="phoneNumber" value="" required class="form-control form-control-line"> </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-12">Profession</label>
+										<div class="col-sm-12">
+											<select name="profession" id="profession" value="" required class="form-control form-control-line">
+													<option data-id="" value="">---Select---</option>
+												<% var newVarData %>
+												<% for (var j = 0; j < professions.length; j++) { %>
+												<option data-id="<%= j %>" value="<%= professions[j].shortName %>##<%= professions[j].fullName %>"><%= professions[j].fullName %></option>
+												
+<% newVarData += professions[j].specialities + '---' %>
+
+
+												<% } %>
+											</select>
+										</div>
+									</div>
+
+
+									<script>
+	
+											$(document).ready(function() {
+												$('#profession').change(function(){
+												let dataIdProff = $(this).find(':selected').data('id');
+												var myVar = `<%- newVarData %>`;
+												// console.log(myVar);
+												var newone  = myVar.split('---');
+												var specialities = newone[`${dataIdProff}`];
+												var spec = specialities.split(',');
+											var elemen = document.getElementById('specialities');
+											elemen.innerHTML = '';
+											for (var z = 0; z < spec.length; z++) {
+												// POPULATE SELECT ELEMENT WITH JSON.
+												elemen.innerHTML = elemen.innerHTML +
+												`<br><input name="specialities" type="checkbox" checked value="${(spec[z]).replace('undefined','')}" /><lable>${(spec[z]).replace('undefined','')}</lable>`;
+											
+											}
+											});
+												});
+
+												</script>
+
+
+										<div class="form-group">
+												<label class="col-sm-12">specialities</label>
+												<div class="col-sm-12">
+													<div id="specialities">
+														
+													</div>
+												</div>
+											</div>
+
+
+
+									<div class="form-group">
+										<label class="col-sm-12">Languages</label>
+										<div class="col-sm-12">
+											<div id="languages">
+												<% for (var i = 0; i < row.length; i++) { %>
+													<input name="languages" type="checkbox" checked value="<%= row[i].langId %>" /><%= row[i].value %> (<%= row[i].code %>)</label>
+												<% } %>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-12">Hours</label>
+										<div class="col-sm-12">
+											
+											<div class="form-group">
+													<label class="col-sm-12">Monday</label>
+												<div class="col-sm-12">
+													<input type="hidden" name="hours" value="Mon" class="form-control form-control-line" />
+													<input type="text" name="hours" placeholder="from" class="time datepicker" />
+													<input type="text"  name="hours" placeholder="to" class="time datepicker" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-12">Tuesday</label>
+												<div class="col-sm-12">
+														<input type="hidden" name="hours" value="Tue" class="form-control form-control-line" />
+														<input type="text" name="hours" placeholder="from" class="time datepicker" />
+													<input type="text" name="hours" placeholder="to" class="time datepicker" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-12">Wednesday</label>
+												<div class="col-sm-12">
+													<input type="hidden" name="hours" value="Wed" class="form-control form-control-line" />
+													<input type="text" name="hours" placeholder="from" class="time datepicker" />
+													<input type="text" name="hours" placeholder="to" class="time datepicker" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-12">Thursday</label>
+												<div class="col-sm-12">
+													<input type="hidden" name="hours" value="Thu" class="form-control form-control-line" />
+													<input type="text" name="hours" placeholder="from" class="time datepicker" />
+													<input type="text" name="hours" placeholder="to" class="time datepicker" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-12">Friday</label>
+												<div class="col-sm-12">
+													<input type="hidden" name="hours" value="Fri" class="form-control form-control-line" />
+													<input type="text" name="hours" placeholder="from" class="time datepicker" />
+													<input type="text" name="hours" placeholder="to" class="time datepicker" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-12">Saturday</label>
+												<div class="col-sm-12">
+													<input type="hidden" name="hours" value="Sat" class="form-control form-control-line" />
+													<input type="text" name="hours" placeholder="from" class="time datepicker" />
+													<input type="text" name="hours" placeholder="to" class="time datepicker" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-12">Sunday</label>
+												<div class="col-sm-12">
+													<input type="hidden" name="hours" value="Sun" class="form-control form-control-line" />
+													<input type="text" name="hours" placeholder="from" class="time datepicker" />
+													<input type="text" name="hours" placeholder="to" class="time datepicker" />
+												</div>
+											</div>
+					
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12">
+											<button class="btn btn-success" >Update Profile</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- /.row -->
+					</div>
+					<!-- /.container-fluid -->
+		
+				</div>
+				<!-- /#page-wrapper -->
+			</div>
+			<!-- /#wrapper -->
+			<!-- jQuery -->
+
+			<script>
+					function populateSelect() {
+						// THE JSON ARRAY.
+						var birds = [
+      {
+        "value": "Alabama",
+        "code": "AL"
+      },
+      {
+        "value": "Alaska",
+        "code": "AK"
+      },
+      {
+        "value": "American Samoa",
+        "code": "AS"
+      },
+      {
+        "value": "Arizona",
+        "code": "AZ"
+      },
+      {
+        "value": "Arkansas",
+        "code": "AR"
+      },
+      {
+        "value": "California",
+        "code": "CA"
+      },
+      {
+        "value": "Colorado",
+        "code": "CO"
+      },
+      {
+        "value": "Connecticut",
+        "code": "CT"
+      },
+      {
+        "value": "Delaware",
+        "code": "DE"
+      },
+      {
+        "value": "District Of Columbia",
+        "code": "DC"
+      },
+      {
+        "value": "Federated States Of Micronesia",
+        "code": "FM"
+      },
+      {
+        "value": "Florida",
+        "code": "FL"
+      },
+      {
+        "value": "Georgia",
+        "code": "GA"
+      },
+      {
+        "value": "Guam",
+        "code": "GU"
+      },
+      {
+        "value": "Hawaii",
+        "code": "HI"
+      },
+      {
+        "value": "Idaho",
+        "code": "ID"
+      },
+      {
+        "value": "Illinois",
+        "code": "IL"
+      },
+      {
+        "value": "Indiana",
+        "code": "IN"
+      },
+      {
+        "value": "Iowa",
+        "code": "IA"
+      },
+      {
+        "value": "Kansas",
+        "code": "KS"
+      },
+      {
+        "value": "Kentucky",
+        "code": "KY"
+      },
+      {
+        "value": "Louisiana",
+        "code": "LA"
+      },
+      {
+        "value": "Maine",
+        "code": "ME"
+      },
+      {
+        "value": "Marshall Islands",
+        "code": "MH"
+      },
+      {
+        "value": "Maryland",
+        "code": "MD"
+      },
+      {
+        "value": "Massachusetts",
+        "code": "MA"
+      },
+      {
+        "value": "Michigan",
+        "code": "MI"
+      },
+      {
+        "value": "Minnesota",
+        "code": "MN"
+      },
+      {
+        "value": "Mississippi",
+        "code": "MS"
+      },
+      {
+        "value": "Missouri",
+        "code": "MO"
+      },
+      {
+        "value": "Montana",
+        "code": "MT"
+      },
+      {
+        "value": "Nebraska",
+        "code": "NE"
+      },
+      {
+        "value": "Nevada",
+        "code": "NV"
+      },
+      {
+        "value": "New Hampshire",
+        "code": "NH"
+      },
+      {
+        "value": "New Jersey",
+        "code": "NJ"
+      },
+      {
+        "value": "New Mexico",
+        "code": "NM"
+      },
+      {
+        "value": "New York",
+        "code": "NY"
+      },
+      {
+        "value": "North Carolina",
+        "code": "NC"
+      },
+      {
+        "value": "North Dakota",
+        "code": "ND"
+      },
+      {
+        "value": "Northern Mariana Islands",
+        "code": "MP"
+      },
+      {
+        "value": "Ohio",
+        "code": "OH"
+      },
+      {
+        "value": "Oklahoma",
+        "code": "OK"
+      },
+      {
+        "value": "Oregon",
+        "code": "OR"
+      },
+      {
+        "value": "Palau",
+        "code": "PW"
+      },
+      {
+        "value": "Pennsylvania",
+        "code": "PA"
+      },
+      {
+        "value": "Puerto Rico",
+        "code": "PR"
+      },
+      {
+        "value": "Rhode Island",
+        "code": "RI"
+      },
+      {
+        "value": "South Carolina",
+        "code": "SC"
+      },
+      {
+        "value": "South Dakota",
+        "code": "SD"
+      },
+      {
+        "value": "Tennessee",
+        "code": "TN"
+      },
+      {
+        "value": "Texas",
+        "code": "TX"
+      },
+      {
+        "value": "Utah",
+        "code": "UT"
+      },
+      {
+        "value": "Vermont",
+        "code": "VT"
+      },
+      {
+        "value": "Virgin Islands",
+        "code": "VI"
+      },
+      {
+        "value": "Virginia",
+        "code": "VA"
+      },
+      {
+        "value": "Washington",
+        "code": "WA"
+      },
+      {
+        "value": "West Virginia",
+        "code": "WV"
+      },
+      {
+        "value": "Wisconsin",
+        "code": "WI"
+      },
+      {
+        "value": "Wyoming",
+        "code": "WY"
+      }
+    ];
+				
+						var ele = document.getElementById('state');
+						for (var i = 0; i < birds.length; i++) {
+							// POPULATE SELECT ELEMENT WITH JSON.
+							ele.innerHTML = ele.innerHTML +
+								'<option value="' + birds[i]['code'] + '">' + birds[i]['value'] + '</option>';
+						}
+					}
+				
+					function show(ele) {
+						// GET THE SELECTED VALUE FROM <select> ELEMENT AND SHOW IT.
+						
+						ele.innerHTML = `<option value="${ele.value}-${ele.options[ele.selectedIndex].text}">${ele.options[ele.selectedIndex].text}</option>`;
+
+
+							
+					}
+
+
+					// var professionsVar = `<%= professions %>`;
+					// console.log(professionsDetails,'---------');
+
+					// for (var a=0; a < professionsDetails.length; ++a) {
+					// 	console.log(professionsDetails[a]);
+					// }
+
+
+
+				</script>
+
+
+<!--The SELECT element.-->
+
+		
+		</body>
+</html>

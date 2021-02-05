@@ -1,0 +1,69 @@
+<%layout('../layout.ejs')%>
+<div id="page-wrapper" style="min-height: 360px;">
+	<div class="container-fluid">
+		<div class="row bg-title">
+			<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+				<h4 class="page-title">Experts List</h4>
+			</div>
+			<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+				<ol class="breadcrumb">
+					<li><a href="#">Dashboard</a></li>
+					<li class="active">Experts List</li>
+				</ol>
+			</div>
+		</div>
+		<!-- /row -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="white-box">
+					<p class="text-muted"><a href="userForm">Add new</a></p>
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>User</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							<tbody>
+							<% for(var i=0; i<rows.length; i++) { %>
+								<% if(rows[i].profileInfo){ %>
+								<tr>
+										<td><%=i+1%></td>
+										<td><a href='userRead?usrno=<%=rows[i].uid%>'><%=rows[i].profileInfo.firstName %> <%=rows[i].profileInfo.lastName %></a></td>
+										<td><%=rows[i].profileInfo.email %></td>
+								</tr>
+								<% } %>
+								<% } %>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container-fluid -->
+
+</div>
+
+<!-- jQuery -->
+<script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+<!--slimscroll JavaScript -->
+<script src="/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="/js/waves.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/js/custom.min.js"></script>
+
+
+
+</body>
+</html>

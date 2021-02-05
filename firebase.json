@@ -1,0 +1,152 @@
+{
+	"hosting": [
+		{
+			"target": "kliit-admin",
+			"public": "public",
+			"rewrites": [
+				{
+					"source": "/timestamp",
+					"function": "app"
+				},
+				{
+					"source": "/loginForm",
+					"function": "app"
+				},
+				{
+					"source": "/index",
+					"function": "app"
+				},
+				{
+					"source": "/loginChk",
+					"function": "app"
+				},
+				{
+					"source": "/userList",
+					"function": "app"
+				},
+				{
+					"source": "/patients",
+					"function": "app"
+				},
+				{
+					"source": "/session",
+					"function": "app"
+				},
+				{
+					"source": "/sessions",
+					"function": "app"
+				},
+				{
+					"source": "/userLogout",
+					"function": "app"
+				},
+				{
+					"source": "/userRead",
+					"function": "app"
+				},
+				{
+					"source": "/patientRead",
+					"function": "app"
+				},
+				{
+					"source": "/userForm",
+					"function": "app"
+				},
+				{
+					"source": "/updateUser",
+					"function": "app"
+				},
+				{
+					"source": "/editSaveUser",
+					"function": "app"
+				},
+				{
+					"source": "/userDelete",
+					"function": "app"
+				},
+				{
+					"source": "/userSave",
+					"function": "app"
+				},
+				{
+					"source": "/devicedetection",
+					"function": "app"
+				}
+			]
+		},
+		{
+			"target": "kliit-admin-test",
+			"public": "public",
+			"rewrites": [
+				{
+					"source": "/timestamp",
+					"function": "app"
+				},
+				{
+					"source": "/loginForm",
+					"function": "app"
+				},
+				{
+					"source": "/index",
+					"function": "app"
+				},
+				{
+					"source": "/loginChk",
+					"function": "app"
+				},
+				{
+					"source": "/userList",
+					"function": "app"
+				},
+				{
+					"source": "/patients",
+					"function": "app"
+				},
+				{
+					"source": "/session",
+					"function": "app"
+				},
+				{
+					"source": "/sessions",
+					"function": "app"
+				},
+				{
+					"source": "/userLogout",
+					"function": "app"
+				},
+				{
+					"source": "/userRead",
+					"function": "app"
+				},
+				{
+					"source": "/patientRead",
+					"function": "app"
+				},
+				{
+					"source": "/userForm",
+					"function": "app"
+				},
+				{
+					"source": "/updateUser",
+					"function": "app"
+				},
+				{
+					"source": "/editSaveUser",
+					"function": "app"
+				},
+				{
+					"source": "/userDelete",
+					"function": "app"
+				},
+				{
+					"source": "/userSave",
+					"function": "app"
+				},
+				{
+					"source": "/devicedetection",
+					"function": "app"
+				}
+			]
+		}
+	]
+}

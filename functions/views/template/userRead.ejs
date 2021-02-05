@@ -1,0 +1,108 @@
+<%layout('../layout.ejs')%>
+        <div id="page-wrapper" style="min-height: 360px;">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Users Details</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+                        <ol class="breadcrumb">
+                            <li><a href="#">Dashboard</a></li>
+                            <li class="active">Users Details</li>
+                        </ol>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /row -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-8 col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">User Details</h3>
+                            <div class="comment-center p-t-10">
+                                <div class="comment-body">
+
+                                    <% if(row.role == 'User'){ %>
+                                        <div class="col-md-4 col-xs-12">
+                                            <div class="white-box">
+                                                <div class="user-bg">
+                                                    <img width="100%" alt="user"
+                                                        src="<%=row.profileInfo.profileImageUrl %>">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="user-btm-box">
+                                                <h1><%=row.profileInfo.firstName %> <%=row.profileInfo.lastName %></h1>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                                <h4><%=row.profileInfo.dob %></h4>
+                                            </div>
+                                        <div class="col-md-8">
+                                            <h5><%=row.profileInfo.state.value %></h5>
+                                        </div>
+                                        <a href="userDelete?usrno=<%=row.uid%>" class="btn btn btn-rounded btn-default btn-outline m-r-5 clr-pink"><i class="ti-check text-success m-r-5"></i>Delete</a>
+
+                                    <% }else{ %>
+                                        <div class="mail-contnet">
+
+
+<div class="col-md-6">
+
+
+                                            <% if(row.profileInfo.profession){ %>
+                                            <h4><%=row.profileInfo.firstName %> <%=row.profileInfo.lastName %></h4>
+                                           Profession: <span class="mail-desc"><%=row.profileInfo.profession.fullName%></span>
+                                           Address: <span class="mail-desc"><%=row.clinicInfo.address%></span>
+                                           Phone Number: <span class="mail-desc"><%=row.clinicInfo.phoneNumber%></span>
+                                           City: <span class="mail-desc"><%=row.clinicInfo.city%></span>
+                                           State: <span class="mail-desc"><%=row.clinicInfo.state['value']%></span>
+                                           Zipcode: <span class="mail-desc"><%=row.clinicInfo.zipcode%></span>
+    <% } %>
+    <a href="updateUser?usrno=<%=row.uid%>" class="btn btn btn-rounded btn-default btn-outline m-r-5 clr-pink"><i class="ti-check text-success m-r-5"></i>Edit</a>
+    <a href="userDelete?usrno=<%=row.uid%>" class="btn btn btn-rounded btn-default btn-outline m-r-5 clr-pink"><i class="ti-check text-success m-r-5"></i>Delete</a>
+</div>
+<div class="col-md-6">
+<img src="<%= (!!row.profileInfo.profileImageUrl)?row.profileInfo.profileImageUrl:'/plugins/images/users/varun.jpg' %>" width="300px" alt="">
+    </div>
+    
+   
+                                           
+                                        </div>
+                                        <% } %>
+
+                                        
+
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="/js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/custom.min.js"></script>
+
+
+
+</body>
+
+</html>

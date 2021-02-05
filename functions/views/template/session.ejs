@@ -1,0 +1,82 @@
+<%layout('../layout.ejs')%>
+        <div id="page-wrapper" style="min-height: 360px;">
+            <div class="container-fluid">
+                <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Users Details</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+                        <ol class="breadcrumb">
+                            <li><a href="/index">Dashboard</a></li>
+                            <li class="active">Session Details</li>
+                        </ol>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /row -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-8 col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Session Details</h3>
+                            <div class="comment-center p-t-10">
+                                <div class="comment-body">
+									<h4>Asked by: <%= question.userInfo.profileInfo.firstName %> <%= question.userInfo.profileInfo.lastName %></h4>
+									<h4>Asked to: Dr. <%= question.expertInfo.profileInfo.lastName %></h4>
+									
+									<% for(var i = 0; i < messages.length; i++) { %>
+										<%
+										var message = messages[i];
+
+										if (message.type == "User") {
+										%>
+										<div class="col-md-3">
+											<p><%= question.userInfo.profileInfo.firstName %> <%= question.userInfo.profileInfo.lastName %></p>
+										</div>
+										<div class="col-md-9">
+											<p><%= message.text %></p>
+											<p><%= new Date(message.createdAt * 1000).toDateString() %></p>
+										</div>
+										<%
+										} else {
+										%>
+										<div class="col-md-3">Dr. <%= question.expertInfo.profileInfo.lastName %> said:</div>
+										<div class="col-md-9">
+											<p><%= message.text %></p>
+											<p><%= new Date(message.createdAt * 1000).toDateString() %></p>
+										</div>
+										<%
+										}
+										%>
+									<% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="/js/waves.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/custom.min.js"></script>
+
+
+
+</body>
+
+</html>
