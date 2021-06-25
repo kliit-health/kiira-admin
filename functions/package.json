@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "dateformat": "^3.0.3",
-    "ejs": "^2.7.1",
+    "ejs": "^2.7.4",
     "ejs-locals": "^1.0.2",
     "express": "^4.17.1",
     "firebase": "^7.3.0",
