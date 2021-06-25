@@ -16,7 +16,7 @@
     "ejs": "^2.7.1",
     "ejs-locals": "^1.0.2",
     "express": "^4.17.1",
-    "firebase": "^7.3.0",
+    "firebase": "^7.24.0",
     "firebase-admin": "^9.4.2",
     "firebase-functions": "^3.3.0"
   },
